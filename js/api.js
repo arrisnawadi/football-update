@@ -43,9 +43,6 @@ const divisionList = () => {
                     <img class='division-logo' src=img/${comp.name.replace(' ', '-')}.png alt='${comp.name.replace(' ', '-')}' />
                   </div>
                 </a>
-                <div class='card-content'>
-                  <span class='card-title truncate center-align flow-text'>${comp.name}</span>
-                </div>
               </div>
             </div>
             `
@@ -74,9 +71,6 @@ const divisionList = () => {
                 <img class='division-logo' src=img/${comp.name.replace(' ', '-')}.png alt='${comp.name.replace(' ', '-')}' />
               </div>
             </a>
-            <div class='card-content'>
-              <span class='card-title truncate center-align'>${comp.name}</span>
-            </div>
           </div>
         </div>
         `
