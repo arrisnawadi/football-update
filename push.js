@@ -12,17 +12,17 @@ webPush.setVapidDetails(
 )
 
 const pushSubscription = {
-  'endpoint': 'https://fcm.googleapis.com/fcm/send/dFfsM7RqutA:APA91bEoSMlUoIimY6ho9bZ1kDvJUZr0qWIhuabRPvF00IyhqK1ccAm2Z_HiF76zpSHWLo-Qihk_EAOTtIT48oDDNHDgX7F5iU1bi6Ke0ub4VIrv-vLNHUvyYrSu5oRHj2921-K_yuOO',
+  'endpoint': 'https://fcm.googleapis.com/fcm/send/dclJs8ZzljU:APA91bH5tJnsHbRCyjEG5DftJ2vLblR-R8WazHB8yHDiG4DQyzoHT1j1lEv4z2DQdhTS_opKvjdRqYwNKW8kRpMIeLK55MjpwO6fIrgohEDpKnSZ4BwxYEDMGuygJJMUc9le55G0NcJx',
   'keys': {
-    'p256dh': 'BLnLBr5S81Izw4Ori+1lJOhw9t/jH7GA/M7YakK//Zd+WTMmSDUQ2Q5XWeFmxC8ktuNN/ewKcQs7g18PnsuvF7g=',
-    'auth': 'x8wvuqRO7vfLHlimRq/33g=='
+    'p256dh': 'BAfC/0mDvUk4pKHVT/WelV9pYQ/F+FN22uCxPCHf9ud5xf821WfNjnO3yTRp/0/nTufgdKcYOTW+ZhpAUyiQRuQ=',
+    'auth': 'pn9MqIeeKHFElydsfon7/Q=='
   }
 }
 
 let payload = 'Congratulations!'
 
 const options = {
-  gcmAPIKey: '303103959853',
+  gcmAPIKey: '547015155146',
   TTL: 60
 }
 
