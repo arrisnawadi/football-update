@@ -81,11 +81,7 @@ if ('serviceWorker' in navigator) {
         console.log('Pendaftaran ServiceWorker gagal')
       })
   })
-  if(window.location.pathname === '/football-update/') {
-    setTimeout(() => {
-      requestPermission()
-    }, 3000)
-  }
+  requestPermission()
 } else {
   console.log('ServiceWorker belum didukung browser ini.')
 }
