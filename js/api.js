@@ -1,8 +1,8 @@
 //#region API
 const API_TOKEN = 'aba37a6a76374be681c95cb1913410e1'
-const competition_url = 'http://api.football-data.org/v2/competitions'
-const stats_url = 'http://api.football-data.org/v2/competitions/'
-const teams_url = 'http://api.football-data.org/v2/teams/'
+const competition_url = 'https://api.football-data.org/v2/competitions'
+const stats_url = 'https://api.football-data.org/v2/competitions/'
+const teams_url = 'https://api.football-data.org/v2/teams/'
 //#endregion
 
 //#region Promise handler

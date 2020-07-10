@@ -64,7 +64,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    'http://api.football-data.org/v2/',
+    'https://api.football-data.org/v2/',
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'api-football',
         plugins: [
