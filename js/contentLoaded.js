@@ -1,9 +1,9 @@
 //#region memanggil method ketika membuka halaman
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname === '/league.html') {
+  if (window.location.pathname === '/football-update/league.html') {
     getLeagueStandings()
     getLeagueScorers()
-  } else if (window.location.pathname === '/team.html') {
+  } else if (window.location.pathname === '/football-update/team.html') {
     const urlParams = new URLSearchParams(window.location.search)
     const isFromSaved = urlParams.get('favorite')
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       }
     }
-  } else if (window.location.pathname === '/match.html') {
+  } else if (window.location.pathname === '/football-update/match.html') {
     getAllMatches()
   }
 })

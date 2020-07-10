@@ -44,7 +44,7 @@ const divisionList = () => {
                   </div>
                 </a>
                 <div class='card-content'>
-                  <span class='card-title truncate center-align'>${comp.name}</span>
+                  <span class='card-title truncate center-align flow-text'>${comp.name}</span>
                 </div>
               </div>
             </div>
