@@ -1,0 +1,147 @@
+@media (min-width: 993px) {
+	.club-logo {
+		width: 150px;
+		display: block;
+	}
+
+	.team {
+		width: 50%;
+		margin: 0 10px;
+	}
+
+	.club-card {
+		width: 100%;
+		margin: 10px auto;
+		padding: 10px 0;
+	}
+
+	.team-logo {
+		width: 50%;
+		height: 200px;
+		display: block;
+		margin: auto;
+	}
+
+	.division-card {
+		width: 100%;
+		margin: 10px auto;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 992px) {
+	.club-logo {
+		width: 100px;
+		display: block;
+	}
+
+	.division-card {
+		width: 100%;
+		margin: 10px auto;
+		padding: 10px;
+	}
+
+	.team {
+		width: 75%;
+		margin: 0 10px;
+	}
+
+	.club-card {
+		width: 85%;
+		margin: 10px auto;
+		padding: 10px;
+	}
+
+	.team-logo {
+		width: 150px;
+		height: 200px;
+		display: block;
+		margin: auto;
+	}
+}
+
+@media (max-width: 600px) {
+	.club-logo {
+		width: 50px;
+		display: block;
+	}
+
+	.division-card {
+		width: 75%;
+		margin: 10px auto;
+		padding: 10px;
+	}
+
+	.team {
+		width: 100%;
+		margin: 0 10px;
+	}
+
+	.club-card {
+		width: 75%;
+		margin: 10px auto;
+		padding: 10px 0;
+	}
+
+	.team-logo {
+		width: 100px;
+		height: 250px;
+		display: block;
+		margin: auto;
+	}
+
+	.max-td {
+		display: none;
+	}
+}
+
+.division-card:hover {
+	box-shadow: 5px 5px 10px grey;
+}
+
+.division-logo {
+	width: 250px;
+	display: block;
+	margin: auto;
+}
+
+.club-card:hover {
+	box-shadow: 5px 5px 10px grey;
+}
+
+h4 {
+	margin-left: 10px;
+}
+
+/* Club info table */
+.team,
+#team-info > tr,
+#team-info > tr > td {
+	border: none;
+}
+
+/* League standings table */
+#standings > tr > td > a {
+	color: black;
+}
+
+#standings > tr > td > a:hover {
+	text-decoration: underline;
+}
+
+.matchLink {
+	text-decoration: none;
+	width: 150px;
+	background-color: #00ACC1;
+	padding: 10px;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border-radius: 10px;
+	color: #ffffff;
+}
+
+.matchLink:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}

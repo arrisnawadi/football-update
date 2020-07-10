@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Top 4 Football League" />
+		<meta name="theme-color" content="#00ACC1" />
+		<title>Football League</title>
+		<link rel="icon" href="img/icon.png" type="image/png" sizes="16x16" />
+		<link rel="stylesheet" href="css/materialize.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<link rel="manifest" href="/manifest.json" />
+	</head>
+	<body>
+		<nav class="cyan darken-1" role="navigation">
+			<div class="nav-wrapper container">
+				<a href="./index.html" class="brand-logo" id="logo-container">
+					<i class="material-icons">sports_soccer</i>
+					Football
+				</a>
+				<a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+				<ul class="topnav right hide-on-med-and-down"></ul>
+				<ul class="sidenav" id="nav-mobile"></ul>
+			</div>
+		</nav>
+
+		<h4 class="center-align list-league"></h4>
+
+		<div class="container" id="body-content"></div>
+
+		<script src="js/materialize.min.js"></script>
+		<script src="js/api.js"></script>
+		<script src="js/nav.js"></script>
+		<!-- <script src="js/notification.js"></script> -->
+		<script src="js/main.js"></script>
+		<script src="js/idb.js"></script>
+		<script src="js/db.js"></script>
+		<script src="js/contentLoaded.js"></script>
+	</body>
+</html>

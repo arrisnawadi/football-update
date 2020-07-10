@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Top 4 Football League" />
+		<meta name="theme-color" content="#00ACC1" />
+		<title>Football League</title>
+		<link rel="icon" href="img/icon.png" type="image/png" sizes="16x16" />
+		<link rel="stylesheet" href="css/materialize.min.css" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="manifest" href="/manifest.json" />
+	</head>
+	<body>
+		<nav class="cyan darken-1" role="navigation">
+			<div class="nav-wrapper container">
+				<a href="./index.html" class="brand-logo" id="logo-container">
+					<i class="material-icons">sports_soccer</i>
+					Football
+				</a>
+				<a href="./index.html" class="sidenav-trigger" data-target="nav-mobile">
+					<i class="material-icons">arrow_back</i>
+				</a>
+				<ul class="topnav right hide-on-med-and-down"></ul>
+				<ul class="sidenav" id="nav-mobile"></ul>
+			</div>
+		</nav>
+
+		<div id="body-content">
+			<h3 class="center-align" id="division-name"></h3>
+
+			<h4>Standings</h4>
+			<table class="highlight responsive-table">
+				<thead class="cyan darken-1" style="color: whitesmoke;">
+					<tr>
+						<th style="padding-left: 10px;">Pos</th>
+						<th>Club</th>
+						<th class="max-td"></th>
+						<th>MP</th>
+						<th>W</th>
+						<th>D</th>
+						<th>L</th>
+						<th>Pts</th>
+						<th class="max-td">GF</th>
+						<th class="max-td">GA</th>
+						<th>GD</th>
+					</tr>
+				</thead>
+				<tbody id="standings"></tbody>
+			</table>
+
+			<br />
+
+			<h4>Top Scorers</h4>
+			<table class="highlight responsive-table">
+				<thead class="cyan darken-1" style="color: whitesmoke;">
+					<tr>
+						<th style="padding-left: 10px;">Name</th>
+						<th>Team</th>
+						<th>Goals</th>
+					</tr>
+				</thead>
+				<tbody id="scorers"></tbody>
+			</table>
+
+			<a class="matchLink">View All Matches</a>
+		</div>
+
+		<script src="js/materialize.min.js"></script>
+		<script src="js/api.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/contentLoaded.js"></script>
+	</body>
+</html>
