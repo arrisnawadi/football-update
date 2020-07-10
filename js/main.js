@@ -29,7 +29,7 @@ const requestPermission = () => {
             .subscribe({
               userVisibleOnly: true,
               applicationServerKey: urlBase64ToUint8Array(
-                'BOIEPhXnOLvwaxzA-aGFjjJCcXxtYIpKm_MUsrX4I0AYEZBbvXoky-nWo1Huu_-4ckfW7qs3q_vPFdLCiBkTCPo'
+                'BGZgynUQyzxMM13iHYDlelTrbd-U5lPolBeHwfh3zNxiH4pTqh7T5CRmZatMT8Ug4-RLG3Ejy_wFhP_Kdk_vTFo'
               ),
             })
             .then((subscribe) => {

@@ -22,7 +22,7 @@ const pushSubscription = {
 let payload = 'Congratulations!'
 
 const options = {
-  gcmAPIKey: '1077103199328',
+  gcmAPIKey: '303103959853',
   TTL: 60
 }
 
