@@ -1,4 +1,12 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js')
+importScripts('/js/workbox/workbox-sw.js');
+importScripts('/js/workbox/workbox-core.prod.js');
+importScripts('/js/workbox/workbox-strategies.prod.js');
+importScripts('/js/workbox/workbox-routing.prod.js');
+
+workbox.setConfig({
+  modulePathPrefix: '/js/workbox/'
+});
+
 workbox.loadModule('workbox-strategies')
 workbox.loadModule('workbox-expiration')
 workbox.loadModule('workbox-cacheable-response')
@@ -44,38 +52,54 @@ workbox.precaching.precacheAndRoute([
 });
 
 workbox.routing.registerRoute(
-    /\.(?:js|css|html|json)$/,
+    ({request}) => request.destination === 'style',
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'static'
+      cacheName: 'css',
     })
-);
-
-workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|svg)$/,
+  );
+  
+  workbox.routing.registerRoute(
+    ({request}) => request.destination === 'image',
     new workbox.strategies.CacheFirst({
-        cacheName: 'images',
-        plugins: [
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60
-            }),
-        ],
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.ExpirationPlugin({
+          maxEntries: 30,
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+        })
+      ],
     })
-);
+  );
 
-workbox.routing.registerRoute(
-    'https://api.football-data.org/v2/',
+  workbox.routing.registerRoute(
+    /^https:\/\/fonts\.googleapis\.com/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'api-football',
-        plugins: [
-            new workbox.cacheableResponse.CacheableResponsePlugin({
-                headers: {
-                    'X-Auth-Token': 'true'
-                }
-            })
-        ]
+      cacheName: 'google-fonts-stylesheets',
     })
-);
+  );
+   
+  workbox.routing.registerRoute(
+    /^https:\/\/fonts\.gstatic\.com/,
+    new workbox.strategies.CacheFirst({
+      cacheName: 'google-fonts-webfonts',
+      plugins: [
+        new workbox.cacheableResponse.CacheableResponsePlugin({
+          statuses: [0, 200],
+        }),
+        new workbox.expiration.ExpirationPlugin({
+          maxAgeSeconds: 30 * 24 * 60 * 60,
+          maxEntries: 30,
+        }),
+      ],
+    })
+  );
+  
+  workbox.routing.registerRoute(
+    /^https:\/\/api\.football-data\.org/,
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: 'football-api'
+    })
+  );
 
 self.addEventListener('push', event => {
     let body

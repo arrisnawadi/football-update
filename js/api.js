@@ -97,7 +97,7 @@ const getLeagueStandings = () => {
             let standingsHTML = ''
 
             data.standings[0].table.forEach(stand => {
-              const teamLogo = (stand.team.crestUrl == '' || stand.team.crestUrl == null) ? 'img/icon.png' : stand.team.crestUrl
+              const teamLogo = (stand.team.crestUrl == '' || stand.team.crestUrl == null) ? 'img/icon.png' : (stand.team.crestUrl.split(':')[0] === 'http') ? stand.team.crestUrl.replace('http', 'https') : stand.team.crestUrl
               standingsHTML += `
               <tr class='team-stand'>
                 <td style='padding-left: 10px'>${stand.position}</td>
@@ -133,7 +133,7 @@ const getLeagueStandings = () => {
         let standingsHTML = ''
 
         data.standings[0].table.forEach(stand => {
-          const teamLogo = (stand.team.crestUrl == '' || stand.team.crestUrl == null) ? 'img/icon.png' : stand.team.crestUrl
+          const teamLogo = (stand.team.crestUrl == '' || stand.team.crestUrl == null) ? 'img/icon.png' : (stand.team.crestUrl.split(':')[0] === 'http') ? stand.team.crestUrl.replace('http', 'https') : stand.team.crestUrl
           standingsHTML += `
           <tr>
             <td style='padding-left: 10px'>${stand.position}</td>
@@ -230,6 +230,7 @@ const getClubInfo = () => {
             let teamInfoHTML = ''
             let squadHTML = ''
             let i = 1
+            const teamLogo = (data.crestUrl == '' || data.crestUrl == null) ? 'img/icon.png' : (data.crestUrl.split(':')[0] === 'http') ? data.crestUrl.replace('http', 'https') : data.crestUrl
 
             teamInfoHTML = `
             <tr>
@@ -270,7 +271,7 @@ const getClubInfo = () => {
             <tr>
               <td>Logo</td>
               <td>:</td>
-              <td><img src='${data.crestUrl}' alt='${data.name}' class='club-logo' /></td>
+              <td><img src='${teamLogo}' alt='${data.name}' class='club-logo' /></td>
             </tr>
             `
 
@@ -300,7 +301,7 @@ const getClubInfo = () => {
             document.getElementById('squad').innerHTML = squadHTML
             document.querySelector('.team-name').innerHTML = `${data.name.toUpperCase()}`
             const backBtn = document.querySelector('.sidenav-trigger')
-            backBtn.setAttribute('href', `./league.html?id=${data.activeCompetitions[0].id}`)
+            backBtn.setAttribute('href', `./index.html`)
             resolve(data)
           })
         }
@@ -316,6 +317,7 @@ const getClubInfo = () => {
         let teamInfoHTML = ''
         let squadHTML = ''
         let i = 1
+        const teamLogo = (data.crestUrl == '' || data.crestUrl == null) ? 'img/icon.png' : (data.crestUrl.split(':')[0] === 'http') ? data.crestUrl.replace('http', 'https') : data.crestUrl
 
         teamInfoHTML = `
         <tr>
@@ -356,7 +358,7 @@ const getClubInfo = () => {
         <tr>
           <td>Logo</td>
           <td>:</td>
-          <td><img src='${data.crestUrl}' alt='${data.name}' class='club-logo' /></td>
+          <td><img src='${teamLogo}' alt='${data.name}' class='club-logo' /></td>
         </tr>
         `
 
@@ -386,7 +388,7 @@ const getClubInfo = () => {
         document.getElementById('squad').innerHTML = squadHTML
         document.querySelector('.team-name').innerHTML = `${data.name.toUpperCase()}`
         const backBtn = document.querySelector('.sidenav-trigger')
-        backBtn.setAttribute('href', `./league.html?id=${data.activeCompetitions[0].id}`)
+        backBtn.setAttribute('href', `./index.html`)
         resolve(data)
       })
       .catch(error)
@@ -394,7 +396,7 @@ const getClubInfo = () => {
 }
 //#endregion
 
-//#region Finished Matches
+//#region Matches
 const getAllMatches = () => {
   return new Promise((resolve, reject) => {
     const urlParams = new URLSearchParams(window.location.search)
@@ -526,6 +528,7 @@ const getFavoriteClubById = () => {
       let teamInfoHTML = ''
       let squadHTML = ''
       let i = 1
+      const teamLogo = (club.crestUrl == '' || club.crestUrl == null) ? 'img/icon.png' : (club.crestUrl.split(':')[0] === 'http') ? club.crestUrl.replace('http', 'https') : club.crestUrl
 
       teamInfoHTML = `
       <tr>
@@ -566,7 +569,7 @@ const getFavoriteClubById = () => {
       <tr>
         <td>Logo</td>
         <td>:</td>
-        <td><img src='${club.crestUrl}' alt='${club.shortName}' class='club-logo' /></td>
+        <td><img src='${teamLogo}' alt='${club.shortName}' class='club-logo' /></td>
       </tr>
     `
 

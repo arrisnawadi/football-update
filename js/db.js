@@ -17,7 +17,13 @@ const saveForLater = club => {
       return tx.complete
     })
     .then(() => {
-      alert('successfully added favorite club')
+      const instanceToast = () => {
+        M.toast({
+          html: 'Successfully added favorite club',
+          classes: 'rounded'
+        })
+      }
+      instanceToast()
       window.location = '../index.html'
     })
 }
@@ -33,7 +39,13 @@ const deleteFromSave = club => {
       return tx.complete
     })
     .then(() => {
-      alert('Successfully deleted favorite club')
+      const instanceToast = () => {
+        M.toast({
+          html: 'Successfully deleted favorite club',
+          classes: 'rounded'
+        })
+      }
+      instanceToast()
       window.location = '../index.html'
     })
 }

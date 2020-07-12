@@ -18,14 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = getFavoriteClubById()
 
       btnRemove.onclick = () => {
-        const conf = confirm('Do you want remove this club from favorite?')
-        if (conf === true) {
-          data.then(club => {
-            deleteFromSave(club)
-          })
-        } else {
-          alert('cancelled')
-        }
+        data.then(club => {
+          deleteFromSave(club)
+        })
       }
     } else {
       btnRemove.style.display = 'none'
